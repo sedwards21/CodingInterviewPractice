@@ -6,9 +6,33 @@ public class BST<E extends Comparable<E>> {
 		root = null;
 	}
 	
-	public add(E item){
+	//wrapper for add method
+	public boolean add(E item){
 		if(root == null){
-			root = item;
+			root = new Node(item);
+			return true;
+		}else{
+			return add(root, item);
+		}
+	}
+	
+	public boolean add(Node<E> localRoot, E item){
+		if(item.compareTo(localRoot.data) == 0){
+			return false;
+		}else if(item.compareTo(localRoot.data) < 0){
+			if(localRoot.left == null){
+				localRoot.left = new Node<E>(item);
+				return true;
+			}else{
+				return add(localRoot.left, item);
+			}
+		}else{
+			if(localRoot.right == null){
+				localRoot.right = new Node<E>(item);
+				return true;
+			}else{
+				return add(localRoot.right, item);
+			}
 		}
 	}
 	
