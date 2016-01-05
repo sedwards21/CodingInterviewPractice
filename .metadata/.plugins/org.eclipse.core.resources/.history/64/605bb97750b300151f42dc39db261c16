@@ -1,6 +1,8 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+import SLList.Node;
+
 public class DLList<E extends Comparable> {
 	private Node<E> head = null;
 	private Node<E> tail = null;
@@ -17,11 +19,6 @@ public class DLList<E extends Comparable> {
 			size++;
 		}
 	}
-	
-	public int size(){
-		return size;
-	}
-	
 	
 	public int find(E target){
 		Node<E> p = head;

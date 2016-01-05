@@ -1,7 +1,7 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class DLList<E extends Comparable> {
+public class DLList<E> {
 	private Node<E> head = null;
 	private Node<E> tail = null;
 	private int size = 0;
@@ -16,24 +16,6 @@ public class DLList<E extends Comparable> {
 			tail = tail.next;
 			size++;
 		}
-	}
-	
-	public int size(){
-		return size;
-	}
-	
-	
-	public int find(E target){
-		Node<E> p = head;
-		int index = 0;
-		while(p != null){
-			if(target.compareTo(p.data) == 0 ){
-				return index;
-			}
-			p = p.next;
-			index++;
-		}
-		return -1;
 	}
 	
 	public Iterator<E> iterator(){
