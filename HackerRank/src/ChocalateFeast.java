@@ -8,19 +8,41 @@ import java.io.*;
 import java.util.*;
 
 public class ChocalateFeast {
-	
-	public static void chocalateCalculations(){
-		
+
+	public static void chocalateCalculations(int wrappersForDiscount, int chocolateBought) {
+
 	}
 
-    public static void main(String[] args) {
-        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
-        Scanner in = new Scanner(System.in);
-        int testCases = in.nextInt();
-        int nMoneyInHisPocket = in.nextInt();
-        int cPricePerChocolate = in.nextInt();
-        int mWrappersForDiscount = in.nextInt();
-        
-        
-    }
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int testCases = in.nextInt();
+		int counter = 0;
+
+		while (counter < testCases) {
+			int nMoneyInHisPocket = in.nextInt();
+			int cPricePerChocolate = in.nextInt();
+			int mWrappersForDiscount = in.nextInt();
+			int xtraWrappers = 0;
+			int chocolateBought = nMoneyInHisPocket / cPricePerChocolate;
+			int x = 0;
+			
+			if (chocolateBought >= mWrappersForDiscount) {
+				// eligible for extra chocolate
+				if(( x = chocolateBought - mWrappersForDiscount) > 0){
+					xtraWrappers = x + 1;
+					chocolateBought++;
+					if(xtraWrappers >= mWrappersForDiscount){
+						chocolateBought++;
+					}else{
+					}
+				}
+
+
+			}
+			System.out.println(chocolateBought);
+			counter++;
+
+		}
+
+	}
 }

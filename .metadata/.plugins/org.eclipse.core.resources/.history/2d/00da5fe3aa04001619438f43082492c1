@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+
+public class CountSort {
+	Hashtable table;
+	
+	public void countSort(int[] ar,int size){
+		Integer currentValue = 0;
+		table = new Hashtable<Integer,Integer>();
+		for(int i =0; i<size;i++){
+			currentValue = (Integer) table.get(ar[i]);
+			table.put(ar[i], ++currentValue);
+		}
+	}
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner in = new Scanner(System.in);
+        int size = in.nextInt();
+        int[] ar = new int[size];
+        for(int i=0; i<size;i++){
+        	ar[i] = in.nextInt();
+        }
+    }
+}
