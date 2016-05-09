@@ -1,0 +1,30 @@
+import java.util.Arrays;
+
+public class SmallestDistance {
+	
+	public int solution(int[] A){
+		Arrays.sort(A);
+		System.out.println("Full array" + Arrays.toString(A));
+		int smallest = 0;
+		int calculation = 0;
+		for(int i=0; i<A.length; i++){
+			if(i >= A.length-2){
+				break;
+			}else{
+				calculation = A[i+1] -  A[i];
+				System.out.println(A[i+1] + "-" + A[i] + " = " + calculation);
+				System.out.println("Smallest = " + smallest);
+				if(smallest > calculation){
+					System.out.println("New smallest = " + calculation);
+					smallest = calculation;
+				}
+			}
+		}
+		return smallest;
+	}
+	public static void main(String[] args) {
+		SmallestDistance sd = new SmallestDistance();
+		int[] ar = {7, 21, 3, 42, 3, 7};
+		System.out.println(  sd.solution( ar ) );
+	}
+}
